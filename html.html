@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <style>
+            .roulcalk{
+            display: flex;
+                align-items: center;
+            flex-direction: row;
+            flex-direction: row;
+            .buttoncalc{
+                width: 50px;
+            height: 50px;
+            background: white;
+            border: solid black 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 25px;
+            vertical-align: top;
+            margin: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="roulcalk">
+    <div id="Iphone">
+<img src="iphonex.jpg" style="width: 97px; height: 118px">
+        <div>
+            IphoneX
+        </div>
+        <div>
+            60 000 сом
+        </div>
+        <input onclick="dad1(0)" type="button" value="Добавить в корзину">
+    </div>
+    <div>
+        <img src="samsung9a.jpg" style="width: 97px; height: 118px">
+        <div>
+            Samsung9A
+        </div>
+        <div>
+            40 000 сом
+        </div>
+        <input onclick="dad1(1)" type="button" value="Добавить в корзину">
+    </div>
+    <div>
+        <img src="huawei3i.jpg" style="width: 97px; height: 118px">
+    <div>
+        Huawei3I
+    </div>
+        <div>
+            20 000 сом
+        </div>
+        <input onclick="dad1(2)" type="button" value="Добавить в корзину">
+    </div>
+    </div>
+<input id="but" type="button" value="Delete" onclick="del()">
+</body>
+<script>
+    let items = [{img: 'iphonex.jpg', name: 'IphoneX', price: '60 000 сом'}, {img: 'samsung9a.jpg', name: 'Samsung9A', price: '40 000 сом'}, {img: 'huawei3i.jpg', name: 'Huawei3I', price: '20 000 сом'}]
+    let kor = []
+    if(localStorage.kor!==undefined) {
+        kor = JSON.parse(localStorage.kor)
+    }
+    function dad1(id) {
+        kor.push(items[id])
+        console.log(kor)
+        localStorage.kor = JSON.stringify(kor)
+    }
+    function del() {
+kor = []
+        localStorage.kor = kor
+    }
+</script>
+</html>
